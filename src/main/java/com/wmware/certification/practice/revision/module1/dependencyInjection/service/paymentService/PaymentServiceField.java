@@ -1,19 +1,18 @@
 package com.wmware.certification.practice.revision.module1.dependencyInjection.service.paymentService;
 
 import com.wmware.certification.practice.revision.module1.dependencyInjection.service.payment.Payment;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
  * @author Raj, Pushp
- * Constructor Injection implementation
+ * Implementation of Field Injection
  */
 @Service
-public class PaymentService {
-    private Payment payment;
+public class PaymentServiceField {
 
-    public PaymentService(Payment payment){
-        this.payment=payment;
-    }
+    @Autowired
+    private Payment payment;
 
     public void makePayment(){
        payment.pay();

@@ -1,7 +1,9 @@
 package com.wmware.certification.practice.revision.module1.dependencyInjection.service.payment.impl;
 
 import com.wmware.certification.practice.revision.module1.dependencyInjection.service.payment.Payment;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PayPay implements Payment {
 
     @Override

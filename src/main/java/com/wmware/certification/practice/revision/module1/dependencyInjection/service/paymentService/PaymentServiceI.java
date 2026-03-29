@@ -6,7 +6,7 @@ import com.wmware.certification.practice.revision.module1.dependencyInjection.se
  * @author Raj, Pushp
  * Interface Injection implementation
  */
-public class PaymentServiceI implements PaymentInterface{
+public class PaymentServiceI extends AbstractPaymentService {
 
     private Payment payment;
 

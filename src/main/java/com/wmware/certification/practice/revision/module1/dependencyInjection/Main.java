@@ -3,8 +3,11 @@ package com.wmware.certification.practice.revision.module1.dependencyInjection;
 import com.wmware.certification.practice.revision.module1.dependencyInjection.service.payment.impl.ApplePay;
 import com.wmware.certification.practice.revision.module1.dependencyInjection.service.payment.impl.PayPay;
 import com.wmware.certification.practice.revision.module1.dependencyInjection.service.paymentService.PaymentService;
+import com.wmware.certification.practice.revision.module1.dependencyInjection.service.paymentService.PaymentServiceField;
 import com.wmware.certification.practice.revision.module1.dependencyInjection.service.paymentService.PaymentServiceI;
 import com.wmware.certification.practice.revision.module1.dependencyInjection.service.paymentService.PaymentServiceSetter;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @author Raj, Pushp
@@ -14,10 +17,16 @@ import com.wmware.certification.practice.revision.module1.dependencyInjection.se
  * Constructor Injection {@link com.wmware.certification.practice.revision.module1.dependencyInjection.service.paymentService.PaymentService},
  * Setter Injection {@link com.wmware.certification.practice.revision.module1.dependencyInjection.service.paymentService.PaymentServiceSetter},
  * Interface Injection {@link com.wmware.certification.practice.revision.module1.dependencyInjection.service.paymentService.PaymentServiceI}
+ * Field Injection {@link com.wmware.certification.practice.revision.module1.dependencyInjection.service.paymentService.PaymentServiceField}
  */
+
+@ComponentScan("com.wmware.certification.practice.revision.module1.dependencyInjection")
 public class Main {
 
     public static void main(String[] args){
+
+        //Concreate Implementation
+        System.out.println("*DI*");
         //Demonstrating Constructor Injection
         System.out.println("__Constructor Injection__");
         PaymentService paymentService = new PaymentService(new ApplePay());
@@ -37,5 +46,30 @@ public class Main {
         paymentServiceI.injectMethod(new ApplePay());
         paymentServiceI.makePayment();
         System.out.println("-----------------------------------");
+        System.out.println("-----------------------------------");
+
+        /* ------------------------- Spring Container Implementation--------------------------------------*/
+
+
+        System.out.println("*DI using Spring framework*");
+        //Using IoC Container
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
+        context.registerShutdownHook();
+
+        System.out.println("__Constructor Injection__");
+        PaymentService paymentServiceSpring = (PaymentService)context.getBean("paymentService");
+        paymentServiceSpring.makePayment();
+        System.out.println("----------------------------------");
+
+
+        System.out.println("__Setter Injection__");
+        PaymentServiceSetter paymentServiceSetterSpring = (PaymentServiceSetter)context.getBean("paymentServiceSetter");
+        paymentServiceSetterSpring.makePayment();
+       System.out.println("-------------------------------------");
+
+       System.out.println("__Field Injection__");
+        PaymentServiceField paymentServiceField = (PaymentServiceField)context.getBean("paymentServiceField");
+        paymentServiceField.makePayment();
+        System.out.println("---------------------------------------");
     }
 }

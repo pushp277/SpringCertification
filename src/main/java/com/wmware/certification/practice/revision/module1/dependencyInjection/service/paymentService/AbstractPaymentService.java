@@ -2,6 +2,6 @@ package com.wmware.certification.practice.revision.module1.dependencyInjection.s
 
 import com.wmware.certification.practice.revision.module1.dependencyInjection.service.payment.Payment;
 
-public interface PaymentInterface {
-    void injectMethod(Payment payment);
+public abstract class AbstractPaymentService {
+    abstract public void injectMethod(Payment payment);
 }
