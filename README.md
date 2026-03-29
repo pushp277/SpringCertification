@@ -1,6 +1,53 @@
 # Spring Professional Certification 
 
 ### 1.1 Dependency Injection
-- Software Design Technique where Object doesn't create dependency on itself, Instead it declares dependency and It's the role of external Object or the Framework to provide concrete dependency to the Object. 
+- Software Design Technique where Object doesn't create dependency on itself, Instead it declares dependency and It's the role of external Object or the Framework to provide concrete dependency to the Object.
+- Types:
+- - Constructor Injection,
+- - Setter Injection,
+- - Field Injection (Spring Supports), and
+- - Interface Injection (Spring doesn't Support)
+- - Method Injection (Not a standard DI, Spring uses it for injecting Prototype Beans (using @Lookup annotation) in Singleton Bean)
+- Advantages:
+- - Decrease Coupling, 
+- - Increase Cohesion
 - [Demo Link](src/main/java/com/wmware/certification/practice/revision/module1/dependencyInjection/Main.java)
 
+### 1.2 Design Pattern and Anti-Pattern
+- Design Pattern
+- - Solution of often occurring problems in software design
+- - Can be categories into Creational, Structural  and Behavioral
+- - **Creational Design Pattern**
+- - - Singleton,
+- - - FactoryMethod,
+- - - AbstractFactory,
+- - - Builder and,
+- - - Prototype
+- - **Structural Design Pattern**
+- - - Adapter,
+- - - Builder,
+- - - Composite,
+- - - Decorator,
+- - - Proxy,
+- - - Facade and,
+- - - FlyWeight
+- - **Behavioral Design Pattern**
+- - - Strategy,
+- - - State,
+- - - Visitor,
+- - - TemplateMethod,
+- - - Chain Of Responsibility,
+- - - Iterator,
+- - - Observer,
+- - - Mediator,
+- - - Command,
+- - - Interpreter and,
+- - - Memento,
+- _ Note: DI is also satisfies Design Pattern Definition
+- Anti-Pattern
+- - Inefficient and conter-productive solution to often occurring problems
+- - - God Object,
+- - - Circular Dependency,
+- - - Sequencial Coupling,
+- - - Hard Code,
+- - - Soft Code, etc
