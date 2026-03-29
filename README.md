@@ -51,3 +51,11 @@
 - - - Sequencial Coupling,
 - - - Hard Code,
 - - - Soft Code, etc
+
+### 1.3 Interface vs Abstract Class
+- **Interface**
+- - It's a description of actions that Object can perform. It's a way to impose action on the Objects that implements them
+- - [Demo Link](src/main/java/com/wmware/certification/practice/revision/module1/interfaceDemo/Main.java)
+-  **AbstractClass**
+- - It's a class which can't be instantiated, It is used as a base class to describe common behavior for it's subclasses
+- - [Demo Link](src/main/java/com/wmware/certification/practice/revision/module1/abstractClassDemo/Main.java)
