@@ -70,3 +70,13 @@
   - [XmlWebApplicationContext](src/main/java/com/wmware/certification/practice/revision/module1/applicationContext/annotationConfigApplicationContext/XmlWebApplicationContextDemo.java)
   - [GenericApplicationContext](src/main/java/com/wmware/certification/practice/revision/module1/applicationContext/annotationConfigApplicationContext/GenericApplicationContextDemo.java)
   - [GenericWebApplicationContext](src/main/java/com/wmware/certification/practice/revision/module1/applicationContext/annotationConfigApplicationContext/GenericWebApplicationContextDemo.java)
+
+### 1.5 IoC (Inversion of Control) Container
+- IoC Container is core component of Spring Framework It's main responsibility is managing Bean lifecycle.
+  - BeanFactory (Simplest version)
+    - Create Bean
+    - Perform Dependency Injection
+    - Mange Bean Lifecycle
+  - ApplicationContext (Advanced version) 
+    - Perform all the task of Bean Factory 
+    - Provide other functionality like event Handling, localization, Resource locator
