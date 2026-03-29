@@ -1,0 +1,15 @@
+package com.wmware.certification.practice.revision.module1.applicationContext.annotationConfigApplicationContext.controllers;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class Controller1 {
+
+    @GetMapping("/hello")
+    public ResponseEntity<Object> getConoller1(){
+       ResponseEntity<Object> temp = ResponseEntity.ok("success");
+       return temp;
+    }
+}
