@@ -80,3 +80,13 @@
   - ApplicationContext (Advanced version) 
     - Perform all the task of Bean Factory 
     - Provide other functionality like event Handling, localization, Resource locator
+
+### 1.6 Bean Scopes
+- [Non-Web Application](src/main/java/com/wmware/certification/practice/revision/module1/beanScopeDemo/nonWeb/Main.java)
+  - Singleton (Default)
+  - Prototype
+- Web Application
+  - Request
+  - Session
+  - Application
+  - WebSocket

@@ -2,6 +2,7 @@ package com.wmware.certification.practice.revision.module1.applicationContext.an
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.stereotype.Component;
 
 /**
