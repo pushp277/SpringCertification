@@ -15,7 +15,6 @@ public class Main {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
 
        Bean2 bean2 = (Bean2)context.getBean("bean2"); //New Bean is created every time
-        bean2.setValue("Saurabh");
 
         Bean1 bean1 = (Bean1)context.getBean("bean1");
         context.getBean("bean1");
