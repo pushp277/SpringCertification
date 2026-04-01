@@ -85,8 +85,8 @@
 - [Non-Web Application](src/main/java/com/wmware/certification/practice/revision/module1/beanScopeDemo/nonWeb/Main.java)
   - Singleton (Default)
   - Prototype
-  - [Web Application](src/main/java/com/wmware/certification/practice/revision/module1/beanScopeDemo/web/Main.java)
-    - Request
-    - Session
-    - Application
-    - WebSocket
+- [Web Application](src/main/java/com/wmware/certification/practice/revision/module1/beanScopeDemo/web/Main.java)
+  - Request
+  - Session
+  - Application
+  - WebSocket
