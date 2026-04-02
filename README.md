@@ -82,11 +82,16 @@
     - Provide other functionality like event Handling, localization, Resource locator
 
 ### 1.6 Bean Scopes
-- [Non-Web Application](src/main/java/com/wmware/certification/practice/revision/module1/beanScopeDemo/nonWeb/Main.java)
+- [**Non-Web Application**](src/main/java/com/wmware/certification/practice/revision/module1/beanScopeDemo/nonWeb/Main.java)
   - Singleton (Default)
   - Prototype
-- [Web Application](src/main/java/com/wmware/certification/practice/revision/module1/beanScopeDemo/web/Main.java)
+- [**Web Application**](src/main/java/com/wmware/certification/practice/revision/module1/beanScopeDemo/web/Main.java)
   - Request
   - Session
   - Application
   - WebSocket
+- [**Prototype Beans injected inside Singleton Bean**](src/main/java/com/wmware/certification/practice/revision/module1/beanScopeDemo/prototypeInjectedInSingletonBean/beans/Main.java)
+  - If It's injected using Autowired or Inject Annotation then It will behave like a singleton bean
+  - The above problem can be solved in two ways
+    - Method Injection using Lookup annotation
+    - using ObjectProvider<PrototypedBean> or Provider<PrototypedBean> (JSR 330)
