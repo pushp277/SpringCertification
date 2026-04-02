@@ -95,3 +95,7 @@
   - The above problem can be solved in two ways
     - Method Injection using Lookup annotation
     - using ObjectProvider<PrototypedBean> or Provider<PrototypedBean> (JSR 330)
+- **[lazy vs eagerly](src/main/java/com/wmware/certification/practice/revision/module1/beanScopeDemo/prototypeInjectedInSingletonBean/beans/Main.java)**
+  - By Default Beans are created eagerly (By default Singleton Bean is created)
+  - The behavior can be altered using Lazy annotation at Component or at Global level using ComponentScan(lazyInit = true) annotation
+  - If the Scope type is Prototype or Request type then They are called lazily
