@@ -109,3 +109,12 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
 - Properties files located inside fileSystem
 - Properties files located inside classPath
 - [Demo Link](src/main/java/com/wmware/certification/practice/revision/module1/propertySourceDemo/Main.java)
+
+### 1.8 BeanFactoryPostProcessor
+- The purpose of BeanFactoryPostProcessor is to modify metadata before beans are created
+- It's a functional interface which implements method void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory)
+- Classes which implements BeanFactoryPostProcessor are
+  - BeanDefinitionRegistryPostProcessor (Interface)
+  - ConfigurationClassPostProcessor
+    - Configures @Configuration, @Bean, @Import, @ComponentScan classes
+  - PropertySourcesPlaceholderConfigurer (This Bean is static because it resolves @Value which must run before any bean is configured)
