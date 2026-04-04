@@ -99,3 +99,13 @@
   - By Default Beans are created eagerly (By default Singleton Bean is created)
   - The behavior can be altered using Lazy annotation at Component or at Global level using ComponentScan(lazyInit = true) annotation
   - If the Scope type is Prototype or Request type then They are called lazily
+
+### 1.7 PropertySource
+PropertySource is a Spring abstraction on Environment Key-Value pairs, which can come from:-
+- JVM Properties
+- System Environment Properties
+- JNDI Properties
+- Servlet Parameters
+- Properties files located inside fileSystem
+- Properties files located inside classPath
+- [Demo Link](src/main/java/com/wmware/certification/practice/revision/module1/propertySourceDemo/Main.java)
