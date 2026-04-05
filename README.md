@@ -98,7 +98,7 @@
 
 ### 1.8 Configuration Annotation
 - Configuration bean is a Spring managed bean, It contains Bean methods, It is used for configuring and registering Beans to ApplicationContext
-- note: although Configuration Bean is a meta-annotation of Component but Spring manged it differently
+- note: although Configuration Bean is a meta-annotation of Component but Spring manages it differently
 - Configuration Bean is being Proxied(CGLIB) to avoid creating new instance of other Beans when the bean method is called
 - We can disable this using ProxyBeanMethods=false
 - [Demo Link](src/main/java/com/wmware/certification/practice/revision/module1/configurationDemo/Main.java)
@@ -152,3 +152,14 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
 - @Profile allows us to conditionally enable and disable Bean registration in Spring Framework
 - It checks for spring.profiles.active value from Environment
 - [Demo Link](src/main/java/com/wmware/certification/practice/revision/module1/profileDemo/Main.java)
+
+### 1.14 Spring Expression Language SpEL
+- Spring Expression Language is an expression language in Spring framework that supports querying and manipulating objects at the runtime.
+- SpEL supports following operations:-
+  - Literals
+  - Bean Property Access
+  - Arithmetic Operations
+  - Relational Operations
+  - Logical Operations
+  - Ternary Operations
+- [Demo Link](src/main/java/com/wmware/certification/practice/revision/module1/springExpressionLanguage/Main.java)
