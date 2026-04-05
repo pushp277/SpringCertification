@@ -146,6 +146,8 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
 - Methods implemented by BeanPostProcessor
   - BeanPostProcessor#postProcessBeforeInitialization()
   - BeanPostProcessor#postProcessAfterInitialization()
+- CommonAnnotationBeanPostProcessor
+  - It's responsible for handling lifecycle callback and dependency injection PostConstruct, PreDestroy, and Resource Annotations (JSR 250)
 - [Demo Link](src/main/java/com/wmware/certification/practice/revision/module1/beanPostProcssorDemo/Main.java)
 
 ### 1.13 Profiles
