@@ -122,8 +122,11 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
 ### 1.9 BeanPostProcessor
 - It's a Spring Extension point that let you perform custom logic on the Bean before and after it's initialization callbacks are executed
 - Methods implemented by BeanPostProcessor
-  - BeanPostProcess#postProcessBeforeInitialization()
-  - BeanPostProcess#postProcessAfterInitialization
+  - BeanPostProcessor#postProcessBeforeInitialization()
+  - BeanPostProcessor#postProcessAfterInitialization()
 - [Demo Link](src/main/java/com/wmware/certification/practice/revision/module1/beanPostProcssorDemo/Main.java)
 
-### 1.10 Configuration Annotation
+### 1.10 Profiles
+- @Profile allows us to conditionally enable and disable Bean registration in Spring Framework
+- It checks for spring.profiles.active value from Environment
+- [Demo Link](src/main/java/com/wmware/certification/practice/revision/module1/profileDemo/Main.java)
