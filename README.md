@@ -81,7 +81,29 @@
     - Perform all the task of Bean Factory 
     - Provide other functionality like event Handling, localization, Resource locator
 
-### 1.6 Bean Scopes
+### 1.6 Beans 
+ - Beans are the objects which is instantiated, configured and managed by IoC container
+ - How to create Beans:
+    - using @Component annotation and it's Stereotypes(@Service, )
+    - using @Bean annotation inside configuration Annotation
+ - [Demo Link](src/main/java/com/wmware/certification/practice/revision/module1/beanDemo/BeanDemo.java)
+
+### 1.7 @Component and It's Stereotypes
+- Component is a class which is represented by @Component annotation, It is being discovered during classpath scan and being registered by IoC container
+- What are the stereotypes of Component
+- Stereotypes annotations are derived from Component Annotation and indicate specific purpose of bean in the application
+  - @Service
+  - @Repository
+  - @Controller
+
+### 1.8 Configuration Annotation
+- Configuration bean is a Spring managed bean, It contains Bean methods, It is used for configuring and registering Beans to ApplicationContext
+- note: although Configuration Bean is a meta-annotation of Component but Spring manged it differently
+- Configuration Bean is being Proxied(CGLIB) to avoid creating new instance of other Beans when the bean method is called
+- We can disable this using ProxyBeanMethods=false
+- [Demo Link](src/main/java/com/wmware/certification/practice/revision/module1/configurationDemo/Main.java)
+
+### 1.9 Bean Scopes
 - [**Non-Web Application**](src/main/java/com/wmware/certification/practice/revision/module1/beanScopeDemo/nonWeb/Main.java)
   - Singleton (Default)
   - Prototype
@@ -100,7 +122,7 @@
   - The behavior can be altered using Lazy annotation at Component or at Global level using ComponentScan(lazyInit = true) annotation
   - If the Scope type is Prototype or Request type then They are called lazily
 
-### 1.7 PropertySource
+### 1.10 PropertySource
 PropertySource is a Spring abstraction on Environment Key-Value pairs, which can come from:-
 - JVM Properties
 - System Environment Properties
@@ -110,7 +132,7 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
 - Properties files located inside classPath
 - [Demo Link](src/main/java/com/wmware/certification/practice/revision/module1/propertySourceDemo/Main.java)
 
-### 1.8 BeanFactoryPostProcessor
+### 1.11 BeanFactoryPostProcessor
 - The purpose of BeanFactoryPostProcessor is to modify metadata before beans are created
 - It's a functional interface which implements method void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory)
 - Classes which implements BeanFactoryPostProcessor are
@@ -119,14 +141,14 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
     - Configures @Configuration, @Bean, @Import, @ComponentScan classes
   - PropertySourcesPlaceholderConfigurer (This Bean is static because it resolves @Value which must run before any bean is configured)
 
-### 1.9 BeanPostProcessor
+### 1.12 BeanPostProcessor
 - It's a Spring Extension point that let you perform custom logic on the Bean before and after it's initialization callbacks are executed
 - Methods implemented by BeanPostProcessor
   - BeanPostProcessor#postProcessBeforeInitialization()
   - BeanPostProcessor#postProcessAfterInitialization()
 - [Demo Link](src/main/java/com/wmware/certification/practice/revision/module1/beanPostProcssorDemo/Main.java)
 
-### 1.10 Profiles
+### 1.13 Profiles
 - @Profile allows us to conditionally enable and disable Bean registration in Spring Framework
 - It checks for spring.profiles.active value from Environment
 - [Demo Link](src/main/java/com/wmware/certification/practice/revision/module1/profileDemo/Main.java)
