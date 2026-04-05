@@ -120,7 +120,10 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - PropertySourcesPlaceholderConfigurer (This Bean is static because it resolves @Value which must run before any bean is configured)
 
 ### 1.9 BeanPostProcessor
-- It's an interface that allows us to create extension to spring framework that modify Spring Bean Object during initialization
-- Types of BeanPostProcessor
-  - postProcessBeforeInitialization
-  - postProcessAfterInitialization
+- It's a Spring Extension point that let you perform custom logic on the Bean before and after it's initialization callbacks are executed
+- Methods implemented by BeanPostProcessor
+  - BeanPostProcess#postProcessBeforeInitialization()
+  - BeanPostProcess#postProcessAfterInitialization
+- [Demo Link](src/main/java/com/wmware/certification/practice/revision/module1/beanPostProcssorDemo/Main.java)
+
+### 1.10 Configuration Annotation
