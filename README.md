@@ -1,5 +1,6 @@
 # Spring Professional Certification 
 
+## 1. Spring Core and Bean Lifecycle
 ### 1.1 Dependency Injection
 - Software Design Technique where Object doesn't create dependency on itself, Instead it declares dependency and It's the role of external Object or the Framework to provide concrete dependency to the Object.
 - Types:
@@ -165,3 +166,15 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - Logical Operations
   - Ternary Operations
 - [Demo Link](src/main/java/com/wmware/certification/practice/revision/module1/springExpressionLanguage/Main.java)
+
+## 2. Aspect Oriented Programming (AOP)
+
+### 2.1 Aspect Oriented Programming
+- It's a programming paradigm which complements Object-Oriented Programming by separating cross-cutting concerns from business logic code.
+- Cross-cutting concerns includes
+  - Logging
+  - Performance Logging
+  - Caching
+  - Monitoring
+  - Transaction
+  - Security
