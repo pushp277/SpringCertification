@@ -178,3 +178,8 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - Monitoring
   - Transaction
   - Security
+
+### 2.2 JDK dynamic Proxy vs CGLIB Proxy
+- Proxy is a structural design pattern where proxy object act as a substitute or placeholder for another object
+- **JDK dynamic Proxy** is a builtin Java feature that creates runtime proxy object using java.lang.reflect.Proxy class
+- **CGLIB (Code Generation Library) proxy** It's a thrid-party library that generates proxies by creating a subclass of target class at runtime
