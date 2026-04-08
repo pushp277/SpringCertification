@@ -183,3 +183,26 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
 - Proxy is a structural design pattern where proxy object act as a substitute or placeholder for another object
 - **JDK dynamic Proxy** is a builtin Java feature that creates runtime proxy object using java.lang.reflect.Proxy class
 - **CGLIB (Code Generation Library) proxy** It's a thrid-party library that generates proxies by creating a subclass of target class at runtime
+
+### 2.3 Join point and Pointcut
+- Join Point is a well-defined point during program execution of a program where an aspect can be applied 
+- In Spring Join Points are limited to method execution(via proxy)
+- However, in general Join point can be intercepted by
+  - Method Interception
+  - Constructor Interception
+  - Field Access Interception
+  - Static method interception
+  - Compile time weaving
+  - Bytecode level control
+- Pointcut is a predicate(expression) which select specific join points where aspect can be applied
+  - Example of pointcut expression
+    - execution
+    - within
+    - @within
+    - @annotation
+    - bean
+    - args
+    - @args
+    - this
+    - target
+    - @target
