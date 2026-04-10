@@ -179,12 +179,16 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - Transaction
   - Security
 
-### 2.2 JDK dynamic Proxy vs CGLIB Proxy
+### 2.2 Main Problems solved by AOP
+- Code Duplication
+- Mixing of Concerns
+
+### 2.3 JDK dynamic Proxy vs CGLIB Proxy
 - Proxy is a structural design pattern where proxy object act as a substitute or placeholder for another object
 - **JDK dynamic Proxy** is a builtin Java feature that creates runtime proxy object using java.lang.reflect.Proxy class
 - **CGLIB (Code Generation Library) proxy** It's a thrid-party library that generates proxies by creating a subclass of target class at runtime
 
-### 2.3 Join point and Pointcut
+### 2.4 Join point and Pointcut
 - Join Point is a well-defined point during program execution of a program where an aspect can be applied 
 - In Spring Join Points are limited to method execution(via proxy)
 - However, in general Join point can be intercepted by
