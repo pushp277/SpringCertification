@@ -147,6 +147,7 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
 - Methods implemented by BeanPostProcessor
   - BeanPostProcessor#postProcessBeforeInitialization()
   - BeanPostProcessor#postProcessAfterInitialization()
+- AnnotationAwareAspectJAutoProxyCreator -> It's a spring internal BeanPostProcessor that automatically detects @Aspect class and create AOP proxy for matching bean
 - CommonAnnotationBeanPostProcessor
   - It's responsible for handling lifecycle callback and dependency injection PostConstruct, PreDestroy, and Resource Annotations (JSR 250)
 - [Demo Link](src/main/java/com/wmware/certification/practice/revision/module1/beanPostProcssorDemo/Main.java)
@@ -189,7 +190,7 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
 - **CGLIB (Code Generation Library) proxy** It's a thrid-party library that generates proxies by creating a subclass of target class at runtime
 
 ### 2.4 Join point and Pointcut
-- Join Point is a well-defined point during program execution of a program where an aspect can be applied 
+- Join Point is a well-defined point during program execution where an aspect can be applied 
 - In Spring Join Points are limited to method execution(via proxy)
 - However, in general Join point can be intercepted by
   - Method Interception
@@ -210,3 +211,32 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
     - this
     - target
     - @target
+- [Demo](src/main/java/com/wmware/certification/practice/revision/module2/AOP_demo/Main.java)
+
+### 2.5 Weaving
+- Weaving is a process of applying Aspect, which modifies code behavior at join point that have matched pointcut
+- type of weaving:-
+  - CompileTime -> bytecode is modified at compilation
+  - Load time Weaving -> bytecode is modified when class is loaded by class loader
+  - Runtime Weaving -> Used by Spring AOP for each bean subject to aspects
+
+### 2.6 Advice
+- Advice is a behavior that will be inserted into the code at each join point matched by pointcut
+- Type of Advices
+  - Before -> executes before join point matched against pointcut is executed 
+    - Usage: 
+      - Authentication Check
+      - Validation
+  - After -> executes after join point matched against  pointcut is executed
+    - Usage:
+      - cleanup
+  - AfterReturning -> executes when method ran successfully
+    - Logging Response
+    - Modifying response
+    - Metric Collection
+  - AfterThrowing -> executes when method throws exception
+    - Error logging
+    - Alerting
+    - Fallback handling
+  - Around -> Wraps around a method controls Before, After and execution
+  - [Demo](src/main/java/com/wmware/certification/practice/revision/module2/AOP_demo/Main.java)

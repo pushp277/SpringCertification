@@ -5,9 +5,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class JoinPoint1 {
 
-    public JoinPoint1(){
-        System.out.println("Instantiated Join Point");
-    }
 
     public void callJoinPointMethod1(){
         System.out.println("JoinPointMethod1 method called");
