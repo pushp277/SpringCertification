@@ -20,6 +20,7 @@ public class Main {
     public static void main(String[] args){
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
 
+
         JoinPoint1 jp1 = (JoinPoint1) context.getBean("joinPoint1");
         jp1.callJoinPointMethod1();
         jp1.callJoinPointMethod2("Pushp");
@@ -71,7 +72,7 @@ public class Main {
         aajp.argsAnnotationJoinPoint(new ArgsAnnotation());
 
         System.out.println("== @target ==");
-        TargetAnnotation ta = (TargetAnnotation) context.getBean("targetAnnotationJoinPoint");
+        TargetAnnotation ta =  context.getBean(TargetAnnotation.class);
         ta.execution();
     }
 }

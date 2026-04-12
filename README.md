@@ -240,3 +240,6 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
     - Fallback handling
   - Around -> Wraps around a method controls Before, After and execution
   - [Demo](src/main/java/com/wmware/certification/practice/revision/module2/AOP_demo/Main.java)
+
+### 3. Spring Security
+- Authentication and Authorization
