@@ -241,5 +241,9 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - Around -> Wraps around a method controls Before, After and execution
   - [Demo](src/main/java/com/wmware/certification/practice/revision/module2/AOP_demo/Main.java)
 
-### 3. Spring Security
-- Authentication and Authorization
+## 3. Spring Security
+### 3.1 Authorization and Authentication
+- Authorization
+  - It's a process of identifying user, device or external system which it claims to be. It involves validation that submitted identity is true.
+- Authentication
+  - It's a process of determining whether an authenticated user can access a resource or perform an action.

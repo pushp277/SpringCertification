@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class DemoObject {
     public String name(){
-        return "Nitika";
+        return "Pushp";
     }
 }
