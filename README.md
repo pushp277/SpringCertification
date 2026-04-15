@@ -242,8 +242,14 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - [Demo](src/main/java/com/wmware/certification/practice/revision/module2/AOP_demo/Main.java)
 
 ## 3. Spring Security
-### 3.1 Authorization and Authentication
+### 3.1 Authorization, Authentication, Principal, Granted Authority and Role
 - Authorization
   - It's a process of identifying user, device or external system which it claims to be. It involves validation that submitted identity is true.
 - Authentication
   - It's a process of determining whether an authenticated user can access a resource or perform an action.
+- Principal
+  - It represents currently logged-in user identity
+- Granted Authority
+  - Fine-grained permissions/ represents Permission and Privilege
+- Role 
+  - High Level Grouping of Authority
