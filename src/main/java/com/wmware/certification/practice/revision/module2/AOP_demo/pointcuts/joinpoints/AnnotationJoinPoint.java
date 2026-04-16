@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class AnnotationJoinPoint {
-    @AnnotationPointcut
     public void annotationJoinPoint(){
         System.out.println("Annotation Join Point is being called");
     }
