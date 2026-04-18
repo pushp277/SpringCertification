@@ -250,6 +250,14 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
 - Principal
   - It represents currently logged-in user identity
 - Granted Authority
-  - Fine-grained permissions/ represents Permission and Privilege
-- Role 
+  - Fine-grained permissions, represents Permission and Privileges
+- Roles
   - High Level Grouping of Authority
+
+
+### 3.2 Web-Level Security and Method-Level Security
+- Web-Level Security
+  - Web-Level Security uses servlet filter to analyze each request made to the system, and based on the rule specified through SecurityFilterChain and HttpSecurity Object, 
+  - request -> delegatingFilterProxy -> springSecurityFilterChain(FilterChainProxy bean) -> securityFilterChains (List of SecurityFilterChain beans) -> Authentication & Authorization
+- Method-Level Security
+  - Method Level uses Spring AOP to proxy invocation to Object, applied advices ensures that during invocation, security rules are met to allow invocation

@@ -2,6 +2,7 @@ package com.wmware.certification.practice.revision.module3.springSecurtityBasics
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -15,6 +16,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
+@EnableWebSecurity
 public class CustomSecurity {
 
     @Bean
@@ -22,7 +24,7 @@ public class CustomSecurity {
         http.
                 authorizeHttpRequests(auth ->
                         auth.requestMatchers("/").permitAll()
-                                .requestMatchers("/user/**").hasRole("USER")
+                                .requestMatchers("/user/**").hasAnyRole("USER", "ADMIN")
                                 .requestMatchers("/admin/**").hasRole("ADMIN")
                                 .anyRequest().authenticated()
                 ).formLogin(Customizer.withDefaults());
