@@ -261,3 +261,26 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - request -> delegatingFilterProxy -> springSecurityFilterChain(FilterChainProxy bean) -> securityFilterChains (List of SecurityFilterChain beans) -> Authentication & Authorization
 - Method-Level Security
   - Method Level uses Spring AOP to proxy invocation to Object, applied advices ensures that during invocation, security rules are met to allow invocation
+
+### 3.3 SecurityContext
+- SecurityContext is an interface that allow you to access security information associated with currently executing thread
+- It provides two methods
+  - getAuthentication() -> provide currently authenticated principal, or authentication request token
+  - setAuthentication(Authentication auth) -> set currently authenticated principal or removes the authentication
+  - It can be accessed via SecurityContextHolder.getContext()
+- SecurityContext allow us to access or set current Authentication object Authenticated Object has the following methods:- 
+  - getPrincipal()
+  - getAuthorities()
+  - getDetails()
+  - getCredentials()
+  - isAuthenticated()
+  - setAuthenticated()
+
+### 3.4 Method Level Security Annotations
+- Spring Security support following Annotations:-
+  - PreAuthorized -> Role based Access, Permission Check and Conditions using parameters
+  - PostAuthorized -> Return only Allowed Item
+  - PreFilter -> filter input from collection before method execution
+  - PostFilter -> filter collection output after method run
+  - Secured -> Simple Role check only
+  - RolesAllowed -> Part of Java JSR-250 checks role, allow Portability
