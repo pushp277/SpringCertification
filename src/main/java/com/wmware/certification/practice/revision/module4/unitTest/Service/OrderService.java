@@ -12,7 +12,6 @@ public class OrderService {
 
     public String order(){
         System.out.println("Ordering...");
-        paymentService.pay();
-        return "Ordered";
+        return paymentService.pay();
     }
 }

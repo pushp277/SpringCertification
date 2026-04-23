@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PaymentService {
 
-    public void pay(){
-        System.out.println("Payment is done");
+    public String pay(){
+        return "Payment is done";
     }
 }
