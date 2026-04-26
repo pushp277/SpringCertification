@@ -31,7 +31,7 @@ public class ControllerTest {
 
         mockMvc.perform(get("/api/learn/test")).
                 andExpect(status().isOk()).
-                andExpect(content().string("mock payment"));
+                andExpect(jsonPath("$.data").value("mock payment"));
 
     }
 
