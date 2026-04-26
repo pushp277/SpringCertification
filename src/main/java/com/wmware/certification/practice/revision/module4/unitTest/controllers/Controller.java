@@ -20,7 +20,6 @@ public class Controller {
 
     @GetMapping("/api/learn/test")
     public ResponseEntity<String> getMapping() throws IOException {
-         System.out.println(orderService.order());
-        return ResponseEntity.ok("success");
+        return ResponseEntity.ok(orderService.order());
     }
 }

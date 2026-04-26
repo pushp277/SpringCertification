@@ -290,3 +290,10 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
 - Testing Functionality in Isolation.
 - Functionality is defined as single method, class, module and component
 - In Spring Framework unit of functionality is usually defined as single class
+- Spring Framework is not being used in Unit Testing
+- [Demo](src/main/java/com/wmware/certification/practice/revision/module4/unitTest/Main.java)
+
+### 4.2 Web MVC Test
+- Need to Test Spring Controller(Web Layer) in isolation,
+- Required to test Http request Mapping, Serialization/De-Serialization, Input Field and Error Handling,
+- 
