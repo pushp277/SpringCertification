@@ -301,4 +301,5 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
 ### 4.3 Data Jpa Test
 - Need to Test Persistence Layer
 - Persistence Layer consists of Schema, Entities, Constraints and Repository
-- It's not a Unittest because database is involved (Unit Test in Persistence Layer doesn't make sense)
+- It's not a Unit test because database is involved (Unit Test in Persistence Layer doesn't make sense)
+- Using real database is preferable rather than H2(in memory database)
