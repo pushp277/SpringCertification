@@ -285,7 +285,7 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - Secured -> Simple Role check only
   - RolesAllowed -> Part of Java JSR-250 checks role, allow Portability
 
-## 4 Spring Test
+## 4 Spring TestContext Framework
 ### 4.1 Unit Test
 - Testing Functionality in Isolation.
 - Functionality is defined as single method, class, module and component
@@ -294,6 +294,11 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
 - [Demo](src/main/java/com/wmware/certification/practice/revision/module4/unitTest/Main.java)
 
 ### 4.2 Web MVC Test
-- Need to Test Spring Controller(Web Layer) in isolation,
-- Required to test Http request Mapping, Serialization/De-Serialization, Input Field and Error Handling,
-- 
+- Need to Test Spring Controller(Web Layer),
+- Required to test Http request Mapping, Serialization/De-Serialization, Input Field and Error Handling
+- [Demo](src/main/java/com/wmware/certification/practice/revision/module4/unitTest/Main.java)
+
+### 4.3 Data Jpa Test
+- Need to Test Persistence Layer
+- Persistence Layer consists of Schema, Entities, Constraints and Repository
+- It's not a Unittest because database is involved (Unit Test in Persistence Layer doesn't make sense)
