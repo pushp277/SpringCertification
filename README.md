@@ -303,3 +303,13 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
 - Persistence Layer consists of Schema, Entities, Constraints and Repository
 - It's not a Unit test because database is involved (Unit Test in Persistence Layer doesn't make sense)
 - Using real database is preferable rather than H2(in memory database)
+
+### 4.5 Json Test
+- We can test Serialization/De-Serialization
+
+### 4.6 WebClient
+- Responsibility :-
+  - Making Requests,
+  - Argument mapping and Serialization,
+  - Deserialization and result mapping,
+  - Error Handling
