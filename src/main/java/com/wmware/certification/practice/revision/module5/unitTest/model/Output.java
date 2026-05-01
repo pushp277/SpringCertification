@@ -1,4 +1,4 @@
-package com.wmware.certification.practice.revision.module4.unitTest.model;
+package com.wmware.certification.practice.revision.module5.unitTest.model;
 
 import java.util.Map;
 

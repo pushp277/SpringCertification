@@ -1,4 +1,4 @@
-package com.wmware.certification.practice.revision.module3.springSecurtityBasics;
+package com.wmware.certification.practice.revision.module4.springSecurtityBasics;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

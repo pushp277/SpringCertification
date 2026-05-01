@@ -1,4 +1,4 @@
-package com.wmware.certification.practice.revision.module3.springSecurtityBasics.controller;
+package com.wmware.certification.practice.revision.module4.springSecurtityBasics.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

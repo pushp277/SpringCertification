@@ -26,7 +26,7 @@
     - Prototype
   - **Structural Design Pattern**
     - Adapter,
-    - Builder,
+    - Bridge,
     - Composite,
     - Decorator,
     - Proxy,
@@ -241,8 +241,11 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - Around -> Wraps around a method controls Before, After and execution
   - [Demo](src/main/java/com/wmware/certification/practice/revision/module2/AOP_demo/Main.java)
 
-## 3. Spring Security
-### 3.1 Authorization, Authentication, Principal, Granted Authority and Role
+## 3. Spring Data
+
+
+## 4. Spring Security
+### 4.1 Authorization, Authentication, Principal, Granted Authority and Role
 - Authorization
   - It's a process of identifying user, device or external system which it claims to be. It involves validation that submitted identity is true.
 - Authentication
@@ -255,14 +258,14 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - High Level Grouping of Authority
 
 
-### 3.2 Web-Level Security and Method-Level Security
+### 4.2 Web-Level Security and Method-Level Security
 - Web-Level Security
   - Web-Level Security uses servlet filter to analyze each request made to the system, and based on the rule specified through SecurityFilterChain and HttpSecurity Object, 
   - request -> delegatingFilterProxy -> springSecurityFilterChain(FilterChainProxy bean) -> securityFilterChains (List of SecurityFilterChain beans) -> Authentication & Authorization
 - Method-Level Security
   - Method Level uses Spring AOP to proxy invocation to Object, applied advices ensures that during invocation, security rules are met to allow invocation
 
-### 3.3 SecurityContext
+### 4.3 SecurityContext
 - SecurityContext is an interface that allow you to access security information associated with currently executing thread
 - It provides two methods
   - getAuthentication() -> provide currently authenticated principal, or authentication request token
@@ -276,7 +279,7 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - isAuthenticated()
   - setAuthenticated()
 
-### 3.4 Method Level Security Annotations
+### 4.4 Method Level Security Annotations
 - Spring Security support following Annotations:-
   - PreAuthorized -> Role based Access, Permission Check and Conditions using parameters
   - PostAuthorized -> Return only Allowed Item
@@ -285,29 +288,29 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - Secured -> Simple Role check only
   - RolesAllowed -> Part of Java JSR-250 checks role, allow Portability
 
-## 4 Spring TestContext Framework
-### 4.1 Unit Test
+## 5 Spring TestContext Framework
+### 5.1 Unit Test
 - Testing Functionality in Isolation.
 - Functionality is defined as single method, class, module and component
 - In Spring Framework unit of functionality is usually defined as single class
 - Spring Framework is not being used in Unit Testing
-- [Demo](src/main/java/com/wmware/certification/practice/revision/module4/unitTest/Main.java)
+- [Demo](src/main/java/com/wmware/certification/practice/revision/module5/unitTest/Main.java)
 
-### 4.2 Web MVC Test
+### 5.2 Web MVC Test
 - Need to Test Spring Controller(Web Layer),
 - Required to test Http request Mapping, Serialization/De-Serialization, Input Field and Error Handling
-- [Demo](src/main/java/com/wmware/certification/practice/revision/module4/unitTest/Main.java)
+- [Demo](src/main/java/com/wmware/certification/practice/revision/module5/unitTest/Main.java)
 
-### 4.3 Data Jpa Test
+### 5.3 Data Jpa Test
 - Need to Test Persistence Layer
 - Persistence Layer consists of Schema, Entities, Constraints and Repository
 - It's not a Unit test because database is involved (Unit Test in Persistence Layer doesn't make sense)
 - Using real database is preferable rather than H2(in memory database)
 
-### 4.5 Json Test
+### 5.5 Json Test
 - We can test Serialization/De-Serialization
 
-### 4.6 WebClient
+### 5.6 WebClient
 - Responsibility :-
   - Making Requests,
   - Argument mapping and Serialization,
