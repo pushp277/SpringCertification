@@ -7,7 +7,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-        <bean id="bean1" class="com.wmware.certification.practice.revision.module1.applicationContext.annotationConfigApplicationContext.beans.Bean1">
+        <bean id="bean1" class="com.vmware.certification.practice.revision.module1.applicationContext.annotationConfigApplicationContext.beans.Bean1">
         </bean>
 <!-- need context if we want annotation to work -->
 <!--        <context:component-scan base-package="com.wmware.certification.practice.revision.module1.applicationContext.annotationConfigApplicationContext" />-->

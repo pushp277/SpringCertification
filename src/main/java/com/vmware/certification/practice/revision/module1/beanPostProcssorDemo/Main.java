@@ -1,0 +1,16 @@
+package com.vmware.certification.practice.revision.module1.beanPostProcssorDemo;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+
+/**
+ * @author Raj, Pushp
+ * Demo to understand BeanPostProcessor
+ * @see BeanPostProcessorDemo
+ */
+@ComponentScan
+public class Main {
+    public static void main(String[] args){
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
+    }
+}
