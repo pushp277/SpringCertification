@@ -5,7 +5,6 @@ import com.vmware.certification.practice.revision.module2.AOP_demo.pointcuts.joi
 import com.vmware.certification.practice.revision.module2.AOP_demo.pointcuts.pointcut.PointCutExpressions;
 import com.vmware.certification.practice.revision.module2.AOP_demo.joinPoints.join1.JoinPoint1;
 import com.vmware.certification.practice.revision.module2.AOP_demo.joinPoints.join2.Join2;
-import com.wmware.certification.practice.revision.module2.AOP_demo.pointcuts.joinpoints.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;

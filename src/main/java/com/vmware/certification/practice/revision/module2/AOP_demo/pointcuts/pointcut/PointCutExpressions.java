@@ -13,6 +13,8 @@ public class PointCutExpressions {
 
     /*
         Execution predicate
+        execution(modifiers? return package.class.method(parameter) throws?)
+        It is being used almost 90% of the time
      */
     @After("execution(* com.wmware.certification.practice.revision.module2.AOP_demo.pointcuts.joinpoints.ExecutionJoinPoint.*())")
     public void afterMethod(JoinPoint jp){
@@ -21,6 +23,7 @@ public class PointCutExpressions {
 
     /*
         Within predicate
+        within(package.class)
      */
     @After("within(com.wmware.certification.practice.revision.module2.AOP_demo.pointcuts.joinpoints.WithinJoinPoint)")
     public void afterMethodWithin(JoinPoint jp){
@@ -28,7 +31,8 @@ public class PointCutExpressions {
     }
 
     /*
-        Within predicate
+        Bean predicate
+        It takes bean name
      */
     @Before("bean(beanJoinPoint)")
     public void beforeMethodBean(JoinPoint jp){
@@ -37,6 +41,7 @@ public class PointCutExpressions {
 
     /*
         Args point cut is created
+        It can be used for filter by type (args(User)) or chapter value into variable
      */
 
     @Before("args(name)")
@@ -53,7 +58,9 @@ public class PointCutExpressions {
     public void targetMethodBean(JoinPoint jp){
         System.out.println("Before method with target pointcut is being called: " +jp.getSignature().getDeclaringTypeName());
     }
+    /*
 
+     */
     @Before("@annotation(com.wmware.certification.practice.revision.module2.AOP_demo.pointcuts.annotation.AnnotationPointcut)")
     public void annotationMethodBean(JoinPoint jp){
         System.out.println("Before method with annotation pointcut is being called: "+jp.getSignature().getName());
