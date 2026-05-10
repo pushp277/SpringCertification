@@ -85,7 +85,7 @@
 ### 1.6 Beans 
  - Beans are the objects which is instantiated, configured and managed by IoC container
  - How to create Beans:
-    - using @Component annotation and it's Stereotypes(@Service, )
+    - using @Component annotation and it's Stereotypes(@Service, @Repository, @Configuration )
     - using @Bean annotation inside configuration Annotation
  - [Demo Link](src/main/java/com/vmware/certification/practice/revision/module1/beanDemo/BeanDemo.java)
 
@@ -152,12 +152,22 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - It's responsible for handling lifecycle callback and dependency injection PostConstruct, PreDestroy, and Resource Annotations (JSR 250)
 - [Demo Link](src/main/java/com/vmware/certification/practice/revision/module1/beanPostProcssorDemo/Main.java)
 
-### 1.13 Profiles
+### 1.13 Post-initializing and pre-Destroy Beans
+- Initialization
+  - using @PostConstruct annotation
+  - InitializingBean#afterPropertiesSet() 
+  - Bean(init = "methodName")
+- Destruction 
+  - using @PreDestory annotation
+  - DisposibleBean#destroy()
+  - Bean(destroy="methodName")
+- [Demo](src/main/java/com/vmware/certification/practice/revision/module1/initBean/Main.java)
+### 1.14 Profiles
 - @Profile allows us to conditionally enable and disable Bean registration in Spring Framework
 - It checks for spring.profiles.active value from Environment
 - [Demo Link](src/main/java/com/vmware/certification/practice/revision/module1/profileDemo/Main.java)
 
-### 1.14 Spring Expression Language SpEL
+### 1.15 Spring Expression Language SpEL
 - Spring Expression Language is an expression language in Spring framework that supports querying and manipulating objects at the runtime.
 - SpEL supports following operations:-
   - Literals
