@@ -154,11 +154,11 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
 
 ### 1.13 Post-initializing and pre-Destroy Beans
 - Initialization
-  - using @PostConstruct annotation
+  - using @PostConstruct annotation (method must have no parameter and return void)
   - InitializingBean#afterPropertiesSet() 
   - Bean(init = "methodName")
 - Destruction 
-  - using @PreDestory annotation
+  - using @PreDestory annotation (method must have no parameter and return void)
   - DisposibleBean#destroy()
   - Bean(destroy="methodName")
 - [Demo](src/main/java/com/vmware/certification/practice/revision/module1/initBean/Main.java)
