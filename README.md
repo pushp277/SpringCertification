@@ -46,10 +46,10 @@
     - Memento,
   - Note: DI also satisfies Design Pattern Definition
 - Anti-Pattern
-  - Inefficient and conter-productive solution to often occurring problems
+  - Inefficient and counter-productive solution to often occurring problems
     - God Object,
     - Circular Dependency,
-    - Sequencial Coupling,
+    - Sequential Coupling,
     - Hard Code,
     - Soft Code, etc
 
