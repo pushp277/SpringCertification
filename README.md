@@ -252,7 +252,44 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - [Demo](src/main/java/com/vmware/certification/practice/revision/module2/AOP_demo/Main.java)
 
 ## 3. Spring Data
+- Checked vs Unchecked Exception:-
+  - **Checked Exception**: Exceptions which are checked at the compile time. i.e. SqlException, IOException, ClassNotFoundException
+  - **Unchecked Exception**: Exceptions which are not checked at the compile time but occur at runtime. i.e. NullPointerException, ArithmeticException, ArrayIndexOutOfBoundException
 
+  - **Pros of Checked Exception**
+    - Forced to handle important failures
+    - Good for recoverable situation i.e. Network issue, file not found
+    - provides Compile Time Feedback
+  - **Cons of Checked Exception**
+    - Create Coupling between caller and callee
+    - Verbose, Boilerplate heavy and more clutter code
+  
+  - **Pros of Unchecked Exception**
+    - reduce coupling between caller and callee
+    - less clutter code
+    - better for programming error
+    - No Exception Propagation Pollution
+  - **Cons of Unchecked Exception**
+    - no compile-time feedback
+    - May result in missing situations in which error handling should be implemented
+  ```
+     Serializable (interface) 
+      |
+      |-- Throwable
+          |
+          |
+          |-- Error  
+          |
+          |-- Exception
+              |        
+              |-- IOException (checked)
+              |
+              |-- SqlException (checked)
+              |
+              |-- RunTimeException (unchecked)
+                  |
+                  |-- NullPointerException
+                        
 
 ## 4. Spring Security
 ### 4.1 Authorization, Authentication, Principal, Granted Authority and Role
