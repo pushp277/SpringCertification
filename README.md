@@ -273,7 +273,7 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
     - no compile-time feedback
     - May result in missing situations in which error handling should be implemented
   ```
-     Serializable (interface) 
+     Serializable (Marker Interface) -> It enables object transfer/storage
       |
       |-- Throwable
           |
@@ -289,7 +289,37 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
               |-- RunTimeException (unchecked)
                   |
                   |-- NullPointerException
-                        
+- **DataSource Interface**
+  - It is an interface of javax.sql which represents source of database connections.
+  - Some Implementations of DataSource are:- DriverManagerDataSource, BasicDataSource, ComboPoolingDataSource, TransationAwareDataSource 
+
+- **JdbcTemplate**    
+  - *Template*: It's a behavioral design pattern that defines structure of algorithm in the base-class, and sub-class can override some steps without changing the overall algorithm
+  - JdbcTemplate is a class located in org.springframework.spring-jdbc
+  - different methods available in JdbcTemplate
+    - query
+    - queryForObject 
+    - queryForMap 
+    - queryForList 
+    - queryForRowSet
+    - execute
+    - update
+    - batchUpdate
+  - *Callback*: It's a code or reference to a code which is being passed as an argument and it gets executed at the time of method execution.
+    - In java Callback can be
+      - class that implements interface,  
+      - Anonymous class,
+      - Lambda Expression, and
+      - Reference (this::method)
+    - JdbcTemplate has following callbacks
+      - RowMapper
+      - ResultSetExtractor
+      - RowCallbackHandler
+      - PreparedStatementCreator
+      - PreparedStatementSetter
+      - ConnectionCallback<T>
+      - StatementCallback<T> 
+  - [Demo](src/main/java/com/vmware/certification/practice/revision/module3/Datasource/Main.java)
 
 ## 4. Spring Security
 ### 4.1 Authorization, Authentication, Principal, Granted Authority and Role
