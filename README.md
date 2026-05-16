@@ -252,7 +252,7 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - [Demo](src/main/java/com/vmware/certification/practice/revision/module2/AOP_demo/Main.java)
 
 ## 3. Spring Data
-- Checked vs Unchecked Exception:-
+### 3.1 Checked vs Unchecked Exception:-
   - **Checked Exception**: Exceptions which are checked at the compile time. i.e. SqlException, IOException, ClassNotFoundException
   - **Unchecked Exception**: Exceptions which are not checked at the compile time but occur at runtime. i.e. NullPointerException, ArithmeticException, ArrayIndexOutOfBoundException
 
@@ -292,8 +292,8 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
 - **DataSource Interface**
   - It is an interface of javax.sql which represents source of database connections.
   - Some Implementations of DataSource are:- DriverManagerDataSource, BasicDataSource, ComboPoolingDataSource, TransationAwareDataSource 
-
-- **JdbcTemplate**    
+```
+### 3.2 **JdbcTemplate**    
   - *Template*: It's a behavioral design pattern that defines structure of algorithm in the base-class, and sub-class can override some steps without changing the overall algorithm
   - JdbcTemplate is a class located in org.springframework.spring-jdbc
   - different methods available in JdbcTemplate
@@ -320,6 +320,44 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
       - ConnectionCallback<T>
       - StatementCallback<T> 
   - [Demo](src/main/java/com/vmware/certification/practice/revision/module3/Datasource/Main.java)
+
+### 3.2 **Transaction**
+- *Definition*: It's a set of operations where either all the operations are performed or non are performed
+  - It follows ACID -> atomicity, consistency, isolation and durability
+  - Transaction is a cross-cutting concerns and can be implemented using Transactional Annotation
+  - *Global Transaction vs Local Transaction*
+    - Global Transaction is a kind of transaction which spans multiple Resource, can we anything usually databases
+    - Local Transaction uses specific resource, they don't span multiple transaction
+- *PlatformTransactionManager* : PlatformTransactionManager is an interface and abstraction over transaction
+  - Some of it's implementations are:
+    - DataSourceTransactionManager
+    - JtaTransactionManager (Global Transaction)
+    - JpaTransactionManager (use for Jpa/Hibernate)
+  - jdbcTemplate able to participate in transaction using DataSourceUtils.
+  - TransactionSynchronizationManager is tread local storage manager for transaction resource.
+  - TransactionInterceptor kicks in AOP (It's an advice)
+- EnableTransactionManagement annotation, sets up core components like, 
+  - TransactionInterceptor
+  - PlatformTransactionManager
+  - Decides AOP
+  - It has following Parameters
+    - mode: Proxy or AspectJ
+    - proxyTargetClass: false or true -> if set true allow CGLIB proxy
+    - rollbackOn -> RunTimeException or Exception
+- *Transaction Propagation* It defines how transaction going to be re-used when calling other transactional method
+  - REQUIRED -> Joins existing transaction if already exists, Creates new Transaction if not exists
+  - SUPPORTS -> Joins existing transaction if already exists, run non-transactionally if it doesn't exist
+  - MANDATORY -> Joins existing transaction if already exists, throw exception
+  - REQUIRES_NEW -> Create new Transaction, suspend transaction if already exists
+  - NOT_SUPPORTED -> Suspend existing transaction, run non-transactionally
+  - NEVER -> executes non-transactionally throw exception if transaction exists
+  - NESTED -> executes within nested transaction if current transaction exists
+- *Transaction Isolation*  It determines how changes made to one transaction visible to other transaction
+  - SERIALIZABLE -> avoids phantom read
+  - REPEATABLE_READ -> avoids non-repeatable read
+  - READ_COMMIT -> avoids dirty read
+  - READ_UNCOMMIT -> allow dirty read
+- Declarative transaction means that instead of handling transaction manually use Transaction Annotation
 
 ## 4. Spring Security
 ### 4.1 Authorization, Authentication, Principal, Granted Authority and Role
