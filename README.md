@@ -359,6 +359,21 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - READ_UNCOMMIT -> allow dirty read
 - Declarative transaction means that instead of handling transaction manually use Transaction Annotation
 
+### 3.3 JPA
+- Unit of Work (UoW) -> Single business operation that should be treated as one atomic task
+  - For Relational Database one Unit of Work is one database transaction
+  - For JPA/Hibernate UoW is Data Object representing entries in the database, and once done ORM figures out all changes that need to be applied to database.
+- What are the dependencies we need for JPA
+  - spring-orm, spring-tx, jakarta-persistence-api, hibernate-orm, datasource, driver, spring-data-jpa
+- Repository Interface
+  - It's Java interface where we declare databaseOperations, and Spring automatically provides implementation at the runtime
+  - Different types of repository which extends RepositoryInterface are
+    - Repository<E,P> -> basic Marker Interface 
+    - CurdRepository<E,P> -> AddGenericMethods
+    - JpaRepository<E,P> -> Jpa Specific Extension of Repository
+    - PagingAndSortingRepository<E,P> -> add findAll method for paging/sorting
+  - In Spring Jpa method name follows specific pattern:
+    - Action + By + Field(s) + Condition(s)
 ## 4. Spring Security
 ### 4.1 Authorization, Authentication, Principal, Granted Authority and Role
 - Authorization
@@ -371,7 +386,6 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - Fine-grained permissions, represents Permission and Privileges
 - Roles
   - High Level Grouping of Authority
-
 
 ### 4.2 Web-Level Security and Method-Level Security
 - Web-Level Security
