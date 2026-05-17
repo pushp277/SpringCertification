@@ -237,14 +237,14 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
     - Usage: 
       - Authentication Check
       - Validation
-  - After -> executes after join point matched against  pointcut is executed
+  - After -> executes after join point matched against  pointcut is executed (no access to return type, or Exception)
     - Usage:
       - cleanup
-  - AfterReturning -> executes when method ran successfully
+  - AfterReturning -> executes when method ran successfully (access to return method)
     - Logging Response
     - Modifying response
     - Metric Collection
-  - AfterThrowing -> executes when method throws exception
+  - AfterThrowing -> executes when method throws exception (access to excpetio)
     - Error logging
     - Alerting
     - Fallback handling
@@ -374,8 +374,36 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
     - PagingAndSortingRepository<E,P> -> add findAll method for paging/sorting
   - In Spring Jpa method name follows specific pattern:
     - Action + By + Field(s) + Condition(s)
-## 4. Spring Security
-### 4.1 Authorization, Authentication, Principal, Granted Authority and Role
+
+## 4. SpringBoot
+- *definition* : It helps us to create stand-alone, production-grade, spring-based application that we can run.
+- It supports various embedded servlet container
+  - Apache Tomcat (default)
+  - Eclipse Jetty -> highly customisable lightweight alternate often used for efficiency
+  - Undertow -> high-performance flexible web server
+  - Netty -> Used by default when building reactive application with WebFlux
+- SpringBoot also provide features that can be used to fulfill non-functional requirement like 
+  - Security
+  - Metrics
+  - HealthCheck
+- SpringBoot provides many modules like
+  - Spring boot dev-tools
+  - Spring boot Actuator 
+  - Spring boot Starter
+  - Spring boot auto-configuration
+- On top of that I can use all Spring framework technology
+  - Spring Web
+  - Template Engine
+  - Spring Security
+  - Spring Data
+- Advantages of SpringBoot
+  - Provide Auto-configuration
+  - Integrate with systemd and init.d which allow to easily run application in linux server
+  - Use DI and IoC from SpringFramework
+  - The main advantage is It's opinionated style
+  - 
+## 5. Spring Security
+### 5.1 Authorization, Authentication, Principal, Granted Authority and Role
 - Authorization
   - It's a process of identifying user, device or external system which it claims to be. It involves validation that submitted identity is true.
 - Authentication
@@ -387,14 +415,14 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
 - Roles
   - High Level Grouping of Authority
 
-### 4.2 Web-Level Security and Method-Level Security
+### 5.2 Web-Level Security and Method-Level Security
 - Web-Level Security
   - Web-Level Security uses servlet filter to analyze each request made to the system, and based on the rule specified through SecurityFilterChain and HttpSecurity Object, 
   - request -> delegatingFilterProxy -> springSecurityFilterChain(FilterChainProxy bean) -> securityFilterChains (List of SecurityFilterChain beans) -> Authentication & Authorization
 - Method-Level Security
   - Method Level uses Spring AOP to proxy invocation to Object, applied advices ensures that during invocation, security rules are met to allow invocation
 
-### 4.3 SecurityContext
+### 5.3 SecurityContext
 - SecurityContext is an interface that allow you to access security information associated with currently executing thread
 - It provides two methods
   - getAuthentication() -> provide currently authenticated principal, or authentication request token
@@ -408,7 +436,7 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - isAuthenticated()
   - setAuthenticated()
 
-### 4.4 Method Level Security Annotations
+### 5.4 Method Level Security Annotations
 - Spring Security support following Annotations:-
   - PreAuthorized -> Role based Access, Permission Check and Conditions using parameters
   - PostAuthorized -> Return only Allowed Item
@@ -417,8 +445,8 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - Secured -> Simple Role check only
   - RolesAllowed -> Part of Java JSR-250 checks role, allow Portability
 
-## 5 Spring TestContext Framework
-### 5.1 Unit Test
+## 6 Spring TestContext Framework
+### 6.1 Unit Test
 - Testing Functionality in Isolation.
 - Functionality is defined as single method, class, module and component
 - In Spring Framework unit of functionality is usually defined as single class
