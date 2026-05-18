@@ -1,8 +1,8 @@
-package com.vmware.certification.practice.revision.module5.unitTest.controllers;
+package com.vmware.certification.practice.revision.module6.unitTest.controllers;
 
 
-import com.vmware.certification.practice.revision.module5.unitTest.Service.OrderService;
-import com.vmware.certification.practice.revision.module5.unitTest.model.Output;
+import com.vmware.certification.practice.revision.module6.unitTest.Service.OrderService;
+import com.vmware.certification.practice.revision.module6.unitTest.model.Output;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

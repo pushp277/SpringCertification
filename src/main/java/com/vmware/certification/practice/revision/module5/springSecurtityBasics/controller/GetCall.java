@@ -1,4 +1,4 @@
-package com.vmware.certification.practice.revision.module4.springSecurtityBasics.controller;
+package com.vmware.certification.practice.revision.module5.springSecurtityBasics.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

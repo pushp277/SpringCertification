@@ -1,8 +1,8 @@
-package com.vmware.certification.practice.revision.module5.unitTest;
+package com.vmware.certification.practice.revision.module6.unitTest;
 
 
-import com.vmware.certification.practice.revision.module5.unitTest.Service.OrderService;
-import com.vmware.certification.practice.revision.module5.unitTest.Service.PaymentService;
+import com.vmware.certification.practice.revision.module6.unitTest.Service.OrderService;
+import com.vmware.certification.practice.revision.module6.unitTest.Service.PaymentService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

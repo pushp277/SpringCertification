@@ -1,4 +1,4 @@
-package com.vmware.certification.practice.revision.module4.springSecurtityBasics;
+package com.vmware.certification.practice.revision.module5.springSecurtityBasics;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

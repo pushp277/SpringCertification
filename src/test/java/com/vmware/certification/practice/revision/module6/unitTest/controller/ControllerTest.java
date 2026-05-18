@@ -1,12 +1,12 @@
-package com.vmware.certification.practice.revision.module5.unitTest.controller;
+package com.vmware.certification.practice.revision.module6.unitTest.controller;
 
-import com.vmware.certification.practice.revision.module5.unitTest.Service.OrderService;
-import com.vmware.certification.practice.revision.module5.unitTest.Service.PaymentService;
+import com.vmware.certification.practice.revision.module6.unitTest.Service.OrderService;
+import com.vmware.certification.practice.revision.module6.unitTest.Service.PaymentService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
-import com.vmware.certification.practice.revision.module5.unitTest.controllers.Controller;
+import com.vmware.certification.practice.revision.module6.unitTest.controllers.Controller;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.context.bean.override.mockito.MockitoSpyBean;

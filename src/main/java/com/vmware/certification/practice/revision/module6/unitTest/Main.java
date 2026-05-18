@@ -1,6 +1,6 @@
-package com.vmware.certification.practice.revision.module5.unitTest;
+package com.vmware.certification.practice.revision.module6.unitTest;
 
-import com.vmware.certification.practice.revision.module5.unitTest.controllers.Controller;
+import com.vmware.certification.practice.revision.module6.unitTest.controllers.Controller;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

@@ -1,4 +1,4 @@
-package com.vmware.certification.practice.revision.module5.unitTest.model;
+package com.vmware.certification.practice.revision.module6.unitTest.model;
 
 import java.util.Map;
 

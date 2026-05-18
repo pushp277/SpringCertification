@@ -401,7 +401,24 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - Integrate with systemd and init.d which allow to easily run application in linux server
   - Use DI and IoC from SpringFramework
   - The main advantage is It's opinionated style
-  - 
+- SpringBootApplication annotation has annotations:-
+  - SpringBootConfiguration (Which is a meta-annotation of Configuration)
+  - EnableAutoConfiguration -> to detect dependency on classpath based on detected dependency
+  - ComponentScan
+- SpringBoot provides following conditionals
+  - ConditionalOnClass(DataClass.class)
+  - ConditionalOnMissingClass(DataClass.class)
+  - ConditionalOnBean(DataSource.class)
+  - ConditionalOnMissingBean(DataSource.class)
+  - ConditionalOnProperties(name="feature.name", havingValue="property")
+  - ConditionalOnResources(resource="classpath:config.yml")
+  - ConditionalOnWebApplication(type = SERVLET)
+  - ConditionalOnNonWebApplication
+  - ConditionalOnExpression(expression)
+  - ConditionalOnSingleCandidate(DataSource.class)
+  - ConditionalOnJava(JavaVersion.TWENTY_ONE)
+  - ConditionalOnCloudPlatform(AWS)
+- 
 ## 5. Spring Security
 ### 5.1 Authorization, Authentication, Principal, Granted Authority and Role
 - Authorization
@@ -451,12 +468,12 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
 - Functionality is defined as single method, class, module and component
 - In Spring Framework unit of functionality is usually defined as single class
 - Spring Framework is not being used in Unit Testing
-- [Demo](src/main/java/com/vmware/certification/practice/revision/module5/unitTest/Main.java)
+- [Demo](src/main/java/com/vmware/certification/practice/revision/module6/unitTest/Main.java)
 
 ### 5.2 Web MVC Test
 - Need to Test Spring Controller(Web Layer),
 - Required to test Http request Mapping, Serialization/De-Serialization, Input Field and Error Handling
-- [Demo](src/main/java/com/vmware/certification/practice/revision/module5/unitTest/Main.java)
+- [Demo](src/main/java/com/vmware/certification/practice/revision/module6/unitTest/Main.java)
 
 ### 5.3 Data Jpa Test
 - Need to Test Persistence Layer
