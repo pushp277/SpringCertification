@@ -1,5 +1,27 @@
 spring:
   application:
-    name: revision 
+    name: revision
+    group: SpringFramework
   server:
     port: 8080
+
+
+logging:
+  level:
+    root: INFO
+  file:
+    name: logs/demo.log
+  config: classpath:log4j2.xml
+
+
+management:
+  endpoints:
+    info:
+      enabled: true
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: "always"
+      show-components: "always"

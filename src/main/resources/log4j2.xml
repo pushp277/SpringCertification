@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+
+    <Properties>
+        <Property name="LOG_PATH">logs</Property>
+        <Property name="APP_NAME">demo-app</Property>
+        <Property name="PATTERN">
+            %style{%d{yyyy-MM-dd HH:mm:ss.SSS}}{cyan}
+            %highlight{%-5level}
+            %style{[%t]}{magenta}
+            %style{%c{1.}}{blue}
+            - %msg%n%throwable
+        </Property>
+    </Properties>
+
+    <Appenders>
+
+        <!-- 🎨 Colorful Console -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${PATTERN}"/>
+        </Console>
+
+        <!-- 📁 Rolling File (Size + Time based) -->
+        <RollingFile name="FileAppender"
+                     fileName="${LOG_PATH}/${APP_NAME}.log"
+                     filePattern="${LOG_PATH}/archive/%d{yyyy-MM}/app-%d{dd}-%i.log.gz">
+
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%t] %c - %msg%n</Pattern>
+            </PatternLayout>
+
+            <Policies>
+                <!-- Rotate daily -->
+                <TimeBasedTriggeringPolicy interval="1"/>
+
+                <!-- Rotate if file > 10MB -->
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+
+            <!-- Keep only last 30 files -->
+            <DefaultRolloverStrategy max="30"/>
+        </RollingFile>
+
+        <!-- ⚡ Async wrapper -->
+        <Async name="AsyncAppender">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileAppender"/>
+        </Async>
+
+    </Appenders>
+
+    <Loggers>
+
+        <!-- 🔍 Custom package logging -->
+        <Logger name="com.yourcompany.service" level="debug" additivity="false">
+            <AppenderRef ref="AsyncAppender"/>
+        </Logger>
+
+        <!-- 🚫 Silence noisy framework -->
+        <Logger name="org.springframework" level="warn"/>
+
+        <!-- ❗ Error-only logger example -->
+        <Logger name="com.yourcompany.security" level="error" additivity="false">
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+
+        <!-- 🌍 Root logger -->
+        <Root level="info">
+            <AppenderRef ref="AsyncAppender"/>
+        </Root>
+
+    </Loggers>
+
+</Configuration>

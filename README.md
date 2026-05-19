@@ -490,3 +490,15 @@ PropertySource is a Spring abstraction on Environment Key-Value pairs, which can
   - Argument mapping and Serialization,
   - Deserialization and result mapping,
   - Error Handling
+
+## 7 Spring MVC and Restful api
+- **MVC** -> It's a design pattern which divides application in 3 independent sections Model, View and Controller,
+  - *Model*:
+    - can handle data access logic,
+    - business logic of the code
+  - *View*:
+    - representation of Data
+  - *Controller*:
+    - Handle Request/Response
+    - 
+- **DispatcherServlet** -> DispatcherServlet extends HttpServlet
