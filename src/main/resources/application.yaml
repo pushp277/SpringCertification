@@ -16,12 +16,17 @@ logging:
 
 management:
   endpoints:
-    info:
-      enabled: true
     web:
       exposure:
         include: "*"
+      base-path: "/mananger"
   endpoint:
     health:
       show-details: "always"
       show-components: "always"
+    info:
+      show-details: "always"
+    shutdown:
+      access: "unrestricted"
+    heapdump:
+      access: unrestricted
